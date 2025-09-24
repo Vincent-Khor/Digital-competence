@@ -22,3 +22,5 @@ git commit -m "Improve output formatting and add comments"
 
 git add .
 git commit -m "Finalize project with README and screenshots"
+
+git log --oneline --graph --decorate --all

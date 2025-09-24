@@ -9,4 +9,6 @@ git commit -m "Add service selection menu and input handling"
 git add main.cpp
 git commit -m "Add distance input and display summary"
 
+git add main.cpp
+git commit -m "Implement fare calculation with switch-case for services"
 

@@ -46,7 +46,26 @@ int main() {
         fare *= 1.5;
     }
 
-        cout << "Hour: " << hour << ":00" << endl;
+    // output
+    cout << fixed << setprecision(2);
+    cout << "\n==============================\n";
+    cout << "         Fare Summary\n";
+    cout << "==============================\n";
+    if (service == 1) cout << "Service: GrabCar" << endl;
+    else if (service == 2) cout << "Service: GrabBike" << endl;
+    else cout << "Service: GrabFood" << endl;
+
+    cout << "Distance: " << distance << " km" << endl;
+    cout << "Current Hour: " << hour << ":00" << endl;
+
+    if (isPeakHour(hour)) {
+        cout << "Peak Hour Surcharge Applied!" << endl;
+    } else {
+        cout << "Normal Rate" << endl;
+    }
+
     cout << "Total Fare: RM " << fare << endl;
+    cout << "==============================\n";
+
     return 0;
 }

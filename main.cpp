@@ -3,6 +3,8 @@ using namespace std;
 
 int main() {
     int service;
+    double distance;
+
     cout << "Choose your service:\n";
     cout << "1. GrabCar\n";
     cout << "2. GrabBike\n";
@@ -10,6 +12,9 @@ int main() {
     cout << "Enter choice: ";
     cin >> service;
 
-    cout << "You chose service: " << service << endl;
+    cout << "Enter distance (km): ";
+    cin >> distance;
+
+    cout << "Service: " << service << ", Distance: " << distance << " km" << endl;
     return 0;
 }

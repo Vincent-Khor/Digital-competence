@@ -17,3 +17,11 @@ git commit -m "Add peak-hour detection and apply surcharge"
 
 git add main.cpp
 git commit -m "Add HHMM input parsing for time handling"
+
+git add main.cpp
+git commit -m "Improve output formatting and add comments"
+
+git add .
+git commit -m "Finalize project with README and screenshots"
+
+git log --oneline --graph --decorate --all

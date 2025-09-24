@@ -12,3 +12,6 @@ git commit -m "Add distance input and display summary"
 git add main.cpp
 git commit -m "Implement fare calculation with switch-case for services"
 
+git add main.cpp
+git commit -m "Add peak-hour detection and apply surcharge"
+

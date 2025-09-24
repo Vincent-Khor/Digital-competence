@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     int service;
-    double distance;
+    double distance, fare = 0.0;
 
     cout << "Choose your service:\n";
     cout << "1. GrabCar\n";
@@ -15,6 +15,13 @@ int main() {
     cout << "Enter distance (km): ";
     cin >> distance;
 
-    cout << "Service: " << service << ", Distance: " << distance << " km" << endl;
+    switch(service) {
+        case 1: fare = 3.0 + (1.5 * distance); break;
+        case 2: fare = 2.0 + (1.0 * distance); break;
+        case 3: fare = 4.0 + (1.2 * distance); break;
+        default: cout << "Invalid service type!" << endl; return 0;
+    }
+
+    cout << "Total Fare: RM " << fare << endl;
     return 0;
 }

@@ -3,10 +3,10 @@
 #include <ctime>   
 using namespace std;
 
-bool isPeakHour(int hour) {
-    return ((hour >= 7 && hour <= 9) ||   
-            (hour >= 12 && hour <= 14) || 
-            (hour >= 17 && hour <= 19));  
+bool isPeakHour(int hhmm) {
+    return ((hhmm >= 700 && hhmm <= 900) ||   
+            (hhmm >= 1200 && hhmm <= 1400) || 
+            (hhmm >= 1700 && hhmm <= 1900));  
 }
 
 int main() {
@@ -17,6 +17,8 @@ int main() {
     time_t now = time(0);
     tm *ltm = localtime(&now);
     int hour = ltm->tm_hour;   // 0-23
+    int minute = ltm->tm_min;  // 0-59
+    int hhmm = hour * 100 + minute; // e.g. 9:01 -> 901
 
     // interface for input
     cout << "==============================\n";
@@ -42,7 +44,7 @@ int main() {
     }
 
     // Raise price if in peak hour
-    if (isPeakHour(hour)) {
+    if (isPeakHour(hhmm)) {
         fare *= 1.5;
     }
 
@@ -56,9 +58,11 @@ int main() {
     else cout << "Service: GrabFood" << endl;
 
     cout << "Distance: " << distance << " km" << endl;
-    cout << "Current Hour: " << hour << ":00" << endl;
+    cout << "Current Time: " 
+         << setw(2) << setfill('0') << hour << ":" 
+         << setw(2) << setfill('0') << minute << endl;
 
-    if (isPeakHour(hour)) {
+    if (isPeakHour(hhmm)) {
         cout << "Peak Hour Surcharge Applied!" << endl;
     } else {
         cout << "Normal Rate" << endl;
